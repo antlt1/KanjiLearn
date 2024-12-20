@@ -5,3 +5,5 @@ const routerPublic = [
     { path: "/list", element: <List/> }
 
 ]
+
+export default routerPublic;
