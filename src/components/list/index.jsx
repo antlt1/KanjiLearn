@@ -1,86 +1,26 @@
-import React from "react";
-import './style.scss';
+import React, { useEffect, useState } from "react";
+import "./style.scss";
+import axios from "axios";
 
 export default function List() {
+  const [dataKanji, setKanji] = useState([]);
+  useEffect(() => {
+    axios.get("https://kanjiapi.dev/v1/kanji/grade-8").then((rsp) => {
+      setKanji(rsp.data);
+      console.log(rsp.data);
+    });
+  }, []);
   return (
     <div className="box">
-      <ol className="articles">
-        <li className="articles__article" style={{ animationOrder: 1 }}>
-          <a className="articles__link">
-            <div className="articles__content articles__content--lhs">
-              <h2 className="articles__title">
-                Sweet roll gingerbread sweet roll jelly
-              </h2>
-              <div className="articles__footer">
-                <p>Cakes</p>
-                <time>1 Jan 2020</time>
-              </div>
-            </div>
-            <div
-              className="articles__content articles__content--rhs"
-              aria-hidden="true"
-            >
-              <h2 className="articles__title">
-                Sweet roll gingerbread sweet roll jelly
-              </h2>
-              <div className="articles__footer">
-                <p>Cakes</p>
-                <time>1 Jan 2020</time>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li className="articles__article" style={{ animationOrder: 2 }}>
-          <a className="articles__link">
-            <div className="articles__content articles__content--lhs">
-              <h2 className="articles__title">
-                Bar cupcake chocolate topping brownie
-              </h2>
-              <div className="articles__footer">
-                <p>Chocolates</p>
-                <time>2 Feb 2020</time>
-              </div>
-            </div>
-            <div
-              className="articles__content articles__content--rhs"
-              aria-hidden="true"
-            >
-              <h2 className="articles__title">
-                Bar cupcake chocolate topping brownie
-              </h2>
-              <div className="articles__footer">
-                <p>Chocolates</p>
-                <time>2 Feb 2020</time>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li className="articles__article" style={{ animationOrder: 3 }}>
-          <a className="articles__link">
-            <div className="articles__content articles__content--lhs">
-              <h2 className="articles__title">
-                Powder tootsie roll chocolate sugar
-              </h2>
-              <div className="articles__footer">
-                <p>Puddings</p>
-                <time>3 Mar 2020</time>
-              </div>
-            </div>
-            <div
-              className="articles__content articles__content--rhs"
-              aria-hidden="true"
-            >
-              <h2 className="articles__title">
-                Powder tootsie roll chocolate sugar
-              </h2>
-              <div className="articles__footer">
-                <p>Puddings</p>
-                <time>3 Mar 2020</time>
-              </div>
-            </div>
-          </a>
-        </li>
-      </ol>
+      <div className="listkanji">
+        {dataKanji.map((data, index) => {
+          return (
+            <li className="card">
+              <a href="#">{data}</a>
+            </li>
+          );
+        })}
+      </div>
     </div>
   );
 }
