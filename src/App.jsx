@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import routerPublic from "./router";
+import Header from "./components/layout/header";
 // import 'Cards'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <>
+      <Header/>
       <div className="box-body">
         <Router>
           <Routes>

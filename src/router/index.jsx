@@ -3,6 +3,7 @@ import Cards from "~/components/cards"
 const routerPublic = [
     { path: "/cards", element: <Cards/> },
     { path: "/cards/:data/", element: <Cards/> },
+    { path: "/list/:data/", element: <List/> },
     { path: "/list", element: <List/> }
 
 ]

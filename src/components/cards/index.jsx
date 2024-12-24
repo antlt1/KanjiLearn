@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
-import './styles.scss';
+import { useParams, Link } from "react-router-dom";
+import "./styles.scss";
 export default function Cards() {
   const [charKanji, setKanji] = useState("");
   const dataURL = useParams();
@@ -12,8 +12,6 @@ export default function Cards() {
     });
   }, [dataURL]);
   return (
-    
-    
     <>
       <div className="card">
         <nav>
@@ -31,7 +29,7 @@ export default function Cards() {
               stroke="#727272"
             />
           </svg>
-          Trở về danh sách hán tự
+          <Link to="/list">Trở về danh sách hán tự</Link>
           <svg
             className="heart"
             version="1.1"
@@ -48,17 +46,28 @@ export default function Cards() {
             />
           </svg>
         </nav>
-      
+
         <div className="description">
-          <h2>{charKanji.kanji}</h2>
-          <h4><b>Nghĩa: </b>{ charKanji.meanings }</h4>
-          <h1>$18</h1>
+          <a className="h2">{charKanji.kanji}</a>
           <p>
-            Classic Peace Lily is a spathiphyllum floor plant arranged in a
-            bamboo planter with a blue &amp; red ribbom and butterfly pick.
+            <h1>
+              {" "}
+              <b>
+                Đọc:
+                {Array.isArray(charKanji.name_readings)
+                  ? charKanji.name_readings.join(", ")
+                  : charKanji.name_readings}
+              </b>
+            </h1>
           </p>
-          <button>Add to Cart</button>
-          <button>Wishlist</button>
+          <h1>Âm Onyomi: {charKanji.on_readings}</h1>
+          <p>Nghĩa: &nbsp;
+            {Array.isArray(charKanji.meanings)
+              ? charKanji.meanings.join(", ")
+              : charKanji.meanings}
+          </p>
+          {/* <button>Add to Cart</button>
+          <button>Wishlist</button> */}
         </div>
       </div>
     </>

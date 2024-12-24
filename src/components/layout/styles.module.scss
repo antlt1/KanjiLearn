@@ -1,0 +1,45 @@
+* {
+  .header {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    ul {
+      display: flex;
+      flex-direction: row;
+      padding: 15px;
+      font-size: 20px;
+      font-weight: 800;
+      list-style: none;
+      cursor: pointer;
+      .nav_li {
+        margin: 20px;
+      }
+      .sub_li {
+        margin: 20px;
+
+        &:hover {
+          li {
+            a {
+              display: block;
+            }
+          }
+        }
+
+        li {
+          a {
+            display: none;
+            position: relative;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: 800;
+            margin: 5px 0;
+            z-index: 99;
+            &:hover {
+              background-color: rgb(240, 248, 255);
+            }
+          }
+        }
+      }
+    }
+  }
+}
