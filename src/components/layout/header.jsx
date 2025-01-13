@@ -10,7 +10,7 @@ export default function Header() {
           <li className={styles.nav_li}>Home</li>
           <li className={styles.sub_li}>
             Kanji List
-            <li>
+            <li className={styles.sub_kanji}>
               <a href="/list/1">N5</a>
               <a href="/list/2">N4</a>
               <a href="/list/3">N3</a>
@@ -20,7 +20,7 @@ export default function Header() {
             
           </li>
           <li className={styles.nav_li}> </li>
-          <li className={styles.nav_li}>Help</li>
+          <li className={styles.nav_li}>Random</li>
         </ul>
       </div>
     </>

@@ -21,7 +21,7 @@ body {
     transition: all 0.3s;
     align-items: center;
     &:hover {
-      background: darken(white, 2%);
+      // background: darken(white, 2%);
       border: 1px solid #aedaa6;
       color: #cfdacd;
       cursor: pointer;

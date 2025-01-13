@@ -25,7 +25,14 @@
           }
         }
 
-        li {
+        .sub_kanji {
+          display: flex;
+          position: absolute;
+          width: 100%;
+          left: 10%;
+          flex-direction: column;
+          background-color: rgba(24, 120, 204, 0.363);
+          border-radius: 1%;
           a {
             display: none;
             position: relative;
@@ -33,9 +40,10 @@
             font-size: 20px;
             font-weight: 800;
             margin: 5px 0;
+            color: black;
             z-index: 99;
             &:hover {
-              background-color: rgb(240, 248, 255);
+              background-color: rgba(240, 248, 255, 0.233);
             }
           }
         }
