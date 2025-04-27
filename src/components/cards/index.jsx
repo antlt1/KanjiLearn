@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
-import "./styles.scss";
+import styles from "./styles.module.scss";
 export default function Cards() {
   const [charKanji, setKanji] = useState("");
   const dataURL = useParams();
   console.log(dataURL.data);
+  // set style bind like ClassName={cx('classname')}
+  const cx = styles.bind(styles);
+
   useEffect(() => {
     axios.get("https://kanjiapi.dev/v1/kanji/" + dataURL.data).then((data) => {
       setKanji(data.data);
