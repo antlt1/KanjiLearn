@@ -1,8 +1,12 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".",
-      "paths": {
-        "~/*": ["src/*"]
-      }
-    }
-  }
+  "compilerOptions": {
+    "baseUrl": ".", // Base directory for resolving paths
+    "paths": {
+      "~/*": ["src/*"] // Map '~' to the 'src' folder
+    },
+    "allowJs": true, // Ensure JavaScript files are supported
+    "checkJs": true  // Enable type checking in JavaScript files
+  },
+  "include": ["src/**/*"], // Include all source files
+  "exclude": ["node_modules"] // Exclude unnecessary files
+}

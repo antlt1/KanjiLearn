@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".", // Base directory for resolving paths
+    "paths": {
+      "~/*": ["src/*"] // Map '~' to the 'src' folder
+    },
+    "allowJs": true, // Allow JavaScript files
+    "checkJs": true, // Enable type checking in JavaScript files
+    "strict": true, // Enable strict type-checking options
+    "jsx": "react", // Specify JSX mode
+    "module": "ESNext", // Use ESNext module system
+    "moduleResolution": "node", // Resolve modules using Node.js style
+    "target": "ESNext", // Target modern JavaScript
+    "esModuleInterop": true, // Enable compatibility with CommonJS modules
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true // Enforce consistent casing in file names
+  },
+  "include": ["src/**/*"], // Include all source files
+  "exclude": ["node_modules"] // Exclude unnecessary files
+}
