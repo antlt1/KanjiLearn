@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './reducers/reducer';
+import userReducer from '~/features/user/userSlice';
 
-const store = configureStore({
-  reducer: rootReducer,
+export const store = configureStore({
+  reducer: {
+    user: userReducer,
+  },
 });
 
-//định nghĩa kiểu Appdispatch và RootState cho store
-export type AppDispatch = typeof store.dispatch;
+// types cho useSelector, useDispatch
 export type RootState = ReturnType<typeof store.getState>;
-
-export default store;
+export type AppDispatch = typeof store.dispatch;

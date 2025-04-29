@@ -13,6 +13,7 @@ export default defineConfig({
     host: true, // Allow access from network
     port: 3000, // Specify the development server port
     hmr: {
+      overlay: false, // Disable overlay for HMR
       protocol: "ws", // Use WebSocket for HMR
       host: "localhost", // Ensure HMR host is set correctly
     },
