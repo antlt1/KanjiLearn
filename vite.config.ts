@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "~": path.resolve(__dirname, "src") // Map '~' to the 'src' folder
-    }
+      "~": path.resolve(__dirname, "src"), // Map '~' to the 'src' folder
+    },
   },
   server: {
     host: true, // Allow access from network
