@@ -4,7 +4,14 @@ import PublicRoutes from "./routes/PublicRoutes";
 import PrivateRoutes from "~/routes/PrivateRoutes";
 import Header from "~/components/Layout/header";
 import Dashboard from "~/components/Admin/Dashboard/dashboard";
-import "./styles.module.scss";
+import  styles from "./styles.module.scss";
+import LeftBar from "~/components/Admin/Dashboard/LeftBar/leftbar";
+import NavBar from "~/components/Admin/Dashboard/NavBar/navbar";
+import classNames from "classnames/bind";
+
+
+
+const cx = classNames.bind(styles);
 
 function App() {
   return (
@@ -23,13 +30,12 @@ function App() {
               </>
             }
           />
-
           {/* Router cho giao diện admin */}
           <Route
             path="/admin/*"
             element={
               <Dashboard>
-                <PrivateRoutes />
+                <PrivateRoutes /> {/* Truyền PrivateRoutes đúng cách */}
               </Dashboard>
             }
           />

@@ -1,13 +1,13 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import routerPrivate from "../router/routerPrivate";
+// import routerPrivate from "../router/routerPrivate";
+// import Dashboard from "~/components/Admin/Dashboard/dashboard";
+import CardAdmin from "~/components/Admin/Card/card";
 
 function PrivateRoutes() {
   return (
     <Routes>
-      {routerPrivate.map((route, index) => (
-        <Route key={index} path={route.path} element={route.element} />
-      ))}
+      <Route path="/card" element={<CardAdmin />} />
     </Routes>
   );
 }
